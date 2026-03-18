@@ -1,0 +1,16 @@
+RewriteEngine On
+
+# Hilangkan index.php
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteRule ^index\.php$ /travel-web/ [R=301,L]
+
+# Slug Paket
+RewriteRule ^paket/([a-zA-Z0-9_-]+)$ detail.php?slug=$1 [L,QSA]
+
+# Slug Blog
+RewriteRule ^blog/([a-zA-Z0-9_-]+)$ blog_detail.php?slug=$1 [L,QSA]
+
+# Clean .php URL
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

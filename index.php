@@ -115,7 +115,7 @@ try {
     }
 
     #about {
-        padding: 80px 0;
+        padding: 80px 0 40px 0;
     }
 
     .about-visual {
@@ -139,6 +139,18 @@ try {
         left: -20px;
         z-index: 1;
         border-radius: 4px;
+    }
+
+    /* Trust Badge Under About */
+    .trust-badge-box {
+        background: #fff;
+        border: 1px dashed var(--gold);
+        padding: 20px;
+        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
     }
 
     #paket {
@@ -187,6 +199,15 @@ try {
 
     .pkg-content {
         padding: 25px;
+    }
+
+    .price-label {
+        font-size: 0.75rem;
+        color: #64748b;
+        display: block;
+        margin-bottom: 2px;
+        font-weight: 600;
+        text-transform: uppercase;
     }
 
     .price-val {
@@ -255,7 +276,6 @@ try {
         border-right: 8px solid var(--gold);
     }
 
-    /* Penyesuaian Form agar sejajar */
     .form-control, .form-select {
         border-radius: 0;
         height: 55px;
@@ -267,6 +287,9 @@ try {
     .form-select {
         background-color: transparent;
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 16px 12px;
     }
 
     .form-select option {
@@ -274,63 +297,26 @@ try {
         color: #fff;
     }
 
-    /* MEDIA QUERIES UNTUK RESPONSIVE */
+    /* MEDIA QUERIES RESPONSIVE */
     @media (max-width: 768px) {
-        .display-5 { font-size: 2rem !important; }
-        .contact-box { padding: 30px 20px; border-right: none; border-bottom: 8px solid var(--gold); }
+        .trust-bar { display: none !important; }
+        .display-5 { font-size: 2.2rem !important; }
         .about-visual::before { display: none; }
-        .trust-item h6 { font-size: 0.7rem; }
         .pkg-img-wrapper { height: 200px; }
-        
-    }
-    /* Update Bagian Form Select & CTA di Mobile */
-@media (max-width: 768px) {
-    /* 1. Memperbaiki Ikon Dropdown yang muncul banyak */
-    .form-select {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
-        background-repeat: no-repeat !important; /* Mencegah ikon muncul berulang */
-        background-position: right 1rem center !important; /* Posisi di pojok kanan */
-        background-size: 16px 12px !important;
-        padding-right: 2.5rem !important;
-        appearance: none;
-        -webkit-appearance: none;
-    }
 
-    /* 2. Memperbaiki Layout CTA (Contact Box) */
-    .contact-box {
-        padding: 30px 20px !important;
-        text-align: center;
-    }
+        .contact-box { 
+            padding: 30px 20px !important; 
+            border-right: none; 
+            border-bottom: 8px solid var(--gold);
+            text-align: center;
+        }
 
-    .contact-box h2 {
-        font-size: 1.6rem !important;
-        margin-bottom: 10px;
+        #mainSlider .carousel-item img {
+            height: auto !important;
+            min-height: auto !important;
+            object-fit: contain;
+        }
     }
-
-    .contact-box p {
-        font-size: 0.9rem;
-        margin-bottom: 15px;
-    }
-
-    .contact-box h4 {
-        font-size: 1.4rem !important;
-        margin-bottom: 25px;
-    }
-
-    /* Beri jarak antar input agar tidak nempel */
-    .contact-box .row.g-3 > div {
-        margin-bottom: 10px;
-    }
-
-    /* 3. Slider Auto Resize (Persegi Panjang) */
-    #mainSlider .carousel-item img {
-        height: auto !important;
-        min-height: auto !important;
-        object-fit: contain;
-    }
-}
-
-    
     </style>
 </head>
 
@@ -405,6 +391,14 @@ try {
                     <span class="text-gold fw-bold small">YOUR SPIRITUAL PARTNER</span>
                     <h1 class="display-5 mb-4">Perjalanan Ibadah yang Bermakna.</h1>
                     <p class="text-muted">Kami mengkurasi layanan Travel Umroh terbaik dengan maskapai premium dan hotel bintang 5 tepat di depan pelataran masjid.</p>
+                    
+                    <div class="trust-badge-box">
+                        <div class="text-gold"><i class="fas fa-shield-check fa-3x"></i></div>
+                        <div>
+                            <h5 class="mb-0 fw-bold">100% Trusted Travel</h5>
+                            <p class="small text-muted mb-0">Terdaftar resmi di Kemenag RI dengan ribuan jamaah sukses diberangkatkan.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -413,6 +407,7 @@ try {
     <section id="paket">
         <div class="container">
             <div class="text-center mb-5">
+                <span class="text-gold fw-bold">OUR SPECIAL OFFERS</span>
                 <h2>Paket Eksklusif 2026</h2>
             </div>
             <div class="row g-4">
@@ -420,30 +415,38 @@ try {
                 <div class="col-md-4">
                     <div class="pkg-card">
                         <div class="pkg-img-wrapper">
-                            <span class="pkg-badge">VIP</span>
+                            <span class="pkg-badge">TERLARIS</span>
                             <img src="assets/img/<?= $p['image'] ?>" alt="<?= $p['title'] ?>">
                         </div>
                         <div class="pkg-content">
                             <h3 class="h5 mb-3"><?= $p['title'] ?></h3>
+                            <span class="price-label">Mulai Dari</span>
                             <span class="price-val">IDR <?= number_format($p['price'], 0, ',', '.') ?></span>
                             <div class="btn-group-cta">
                                 <button class="btn-detail" data-bs-toggle="modal" data-bs-target="#modalPaket<?= $p['id'] ?>">DETAIL</button>
-                                <button onclick="setPackage('<?= $p['title'] ?>')" class="btn-booking">PESAN</button>
+                                <button onclick="setPackage('<?= $p['title'] ?>')" class="btn-booking">PESAN SEKARANG</button>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="modal fade" id="modalPaket<?= $p['id'] ?>" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-body p-4">
-                                <div class="row">
-                                    <div class="col-md-5 mb-3"><img src="assets/img/<?= $p['image'] ?>" class="img-fluid rounded"></div>
-                                    <div class="col-md-7">
-                                        <h4><?= $p['title'] ?></h4>
-                                        <h5 class="text-success">IDR <?= number_format($p['price'], 0, ',', '.') ?></h5>
-                                        <p class="small text-muted"><?= nl2br($p['description']) ?></p>
-                                        <button onclick="setPackage('<?= $p['title'] ?>')" class="btn btn-dark w-100" data-bs-dismiss="modal">KONSULTASI WA</button>
+                        <div class="modal-content border-0 overflow-hidden">
+                            <div class="modal-header border-0 position-absolute top-0 end-0" style="z-index: 99;">
+                                <button type="button" class="btn-close bg-white p-2 rounded-circle" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body p-0">
+                                <div class="row g-0">
+                                    <div class="col-md-5">
+                                        <img src="assets/img/<?= $p['image'] ?>" class="h-100 w-100 object-fit-cover" style="min-height: 300px;">
+                                    </div>
+                                    <div class="col-md-7 p-4 p-lg-5">
+                                        <h3 class="mb-1"><?= $p['title'] ?></h3>
+                                        <span class="text-gold small d-block mb-3">KEBERANGKATAN 2026</span>
+                                        <h4 class="text-success mb-4">IDR <?= number_format($p['price'], 0, ',', '.') ?></h4>
+                                        <p class="text-muted small mb-4"><?= nl2br($p['description']) ?></p>
+                                        <button onclick="setPackage('<?= $p['title'] ?>')" class="btn btn-dark w-100 py-3 fw-bold" data-bs-dismiss="modal">KONSULTASI VIA WHATSAPP</button>
                                     </div>
                                 </div>
                             </div>
@@ -457,7 +460,7 @@ try {
 
     <section id="gallery">
         <div class="container text-center">
-            <h2 class="mb-5">Dokumentasi</h2>
+            <h2 class="mb-5 text-white">Dokumentasi Jamaah</h2>
             <div class="row g-1">
                 <div class="col-6 col-md-3 gal-item"><img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=400"></div>
                 <div class="col-6 col-md-3 gal-item"><img src="https://images.unsplash.com/photo-1542466507-d7491d54236e?auto=format&fit=crop&w=400"></div>
@@ -469,11 +472,11 @@ try {
 
     <section id="blog">
         <div class="container">
-            <h2 class="mb-4">Jurnal Islami</h2>
+            <h2 class="mb-4">Jurnal Islami & Tips</h2>
             <?php foreach($blogs as $b): ?>
             <a href="blog_detail.php?slug=<?= $b['slug'] ?>" class="blog-link">
                 <div>
-                    <small class="text-gold fw-bold">Update 2026</small>
+                    <small class="text-gold fw-bold">BLOG UPDATE</small>
                     <h4 class="mb-0 h5"><?= $b['title'] ?></h4>
                 </div>
                 <i class="fas fa-arrow-right"></i>
@@ -488,7 +491,7 @@ try {
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-5">
                         <h2 class="h3">Hubungi Kami</h2>
-                        <p class="opacity-75">Konsultasikan rencana ibadah Anda.</p>
+                        <p class="opacity-75">Bicarakan rencana ibadah Anda secara personal.</p>
                         <h4 class="text-gold">0812-3456-7890</h4>
                     </div>
                     <div class="col-lg-7">
@@ -506,7 +509,7 @@ try {
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-light w-100 fw-bold py-3">KIRIM PESAN</button>
+                                    <button type="submit" class="btn btn-light w-100 fw-bold py-3">KIRIM PESAN SEKARANG</button>
                                 </div>
                             </div>
                         </form>
@@ -517,7 +520,7 @@ try {
     </section>
 
     <footer class="text-center py-4 border-top">
-        <p class="text-muted small mb-0">&copy; 2026 MyHijrahWisata Indonesia.</p>
+        <p class="text-muted small mb-0">&copy; 2026 MyHijrahWisata Indonesia. All Rights Reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

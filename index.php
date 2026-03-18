@@ -1,229 +1,450 @@
 <?php 
 require 'config.php'; 
-
-/**
- * LOGIK DATA DINAMIS
- */
 try {
     $banners = $pdo->query("SELECT * FROM banners ORDER BY id DESC")->fetchAll();
     $packages = $pdo->query("SELECT * FROM packages ORDER BY id DESC")->fetchAll();
     $blogs = $pdo->query("SELECT * FROM blogs ORDER BY id DESC LIMIT 3")->fetchAll();
-} catch (PDOException $e) {
-    die("Koneksi Database Gagal: " . $e->getMessage());
-}
+} catch (PDOException $e) { die("Error: " . $e->getMessage()); }
 ?>
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyHijrahWisata | Perjalanan Berkah, Hati Bahagia</title>
     
-    <link rel="icon" type="image/jpeg" href="assets/img/logo_hijrah.jpeg">
-    
+    <title>MyHijrahWisata | Spesialis Umroh VIP & Tour Halal Eksklusif</title>
+    <meta name="description" content="MyHijrahWisata menyediakan layanan Umroh VIP bintang 5 dan paket tour halal terbaik. Pengalaman ibadah nyaman dengan hotel ring 1 dan pembimbing sesuai sunnah.">
+    <meta name="keywords" content="umroh vip, paket umroh bintang 5, tour halal specialist, myhijrahwisata, travel umroh terpercaya">
+    <meta name="author" content="MyHijrahWisata Indonesia">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://myhijrahwisata.com/">
+    <meta property="og:title" content="MyHijrahWisata | Luxury Umroh & Halal Tour Specialist">
+    <meta property="og:description" content="Wujudkan perjalanan ibadah bermakna dengan layanan premium bintang 5 dari MyHijrahWisata.">
+    <meta property="og:image" content="assets/img/logo_hijrah.jpeg">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
+    <link rel="icon" type="image/x-icon" href="assets/img/logo_hijrah.jpeg">
+    <link rel="apple-touch-icon" href="assets/img/logo_hijrah.jpeg">
+
     <style>
-        :root {
-            --primary-white: #ffffff;
-            --primary-black: #1a1a1a; /* Hitam yang lebih elegan */
-            --accent-green: #198754; /* Hijau Bootstrap Success, segar dan islami */
-            --soft-gray: #f8f9fa;
-        }
+    :root {
+        --gold: #b38e5d;
+        --dark: #0f172a;
+        --emerald: #064e3b;
+        --light: #f8fafc;
+        --border: #e2e8f0;
+    }
 
-        body { font-family: 'Poppins', sans-serif; color: var(--primary-black); scroll-behavior: smooth; overflow-x: hidden; background-color: var(--primary-white); }
-        
-        /* Utilitas Warna Hijau */
-        .text-hijrah { color: var(--accent-green) !important; }
-        .bg-hijrah { background-color: var(--accent-green) !important; }
-        
-        /* NAVBAR - HANYA LOGO */
-        .navbar { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); z-index: 1050; border-bottom: 1px solid #eee; }
-        .navbar-brand img {
-            height: 60px; /* Ukuran logo di navbar disesuaikan */
-            width: auto;
-            object-fit: contain;
-        }
-        .nav-link { color: var(--primary-black) !important; font-weight: 500; }
-        .nav-link:hover { color: var(--accent-green) !important; }
-        
-        /* Tombol Navasi Utama (Hitam) */
-        .btn-nav { background: var(--primary-black); color: var(--primary-white); border-radius: 50px; padding: 10px 25px; transition: 0.3s; font-weight: 600; border: none; }
-        .btn-nav:hover { background: var(--accent-green); color: var(--primary-white); transform: translateY(-2px); }
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: var(--dark);
+        background: #fff;
+        line-height: 1.6;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
 
-        /* HERO SLIDER */
-        .hero-slider .carousel-item img { width: 100%; height: auto; display: block; }
-        .carousel-control-prev, .carousel-control-next { filter: invert(1); z-index: 10; }
-        /* Warna indikator slider jadi hijau */
-        .carousel-indicators [data-bs-target] { background-color: var(--accent-green); }
+    h1, h2, h3 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 800;
+    }
 
-        /* SECTIONS & CARDS */
-        .section-padding { padding: 80px 0; }
-        
-        /* Kartu Paket & Blog */
-        .card-custom { border: none; border-radius: 25px; overflow: hidden; transition: 0.4s; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background: var(--primary-white); border: 1px solid #eee; }
-        .card-custom:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--accent-green); }
-        
-        .img-wrapper { height: 230px; overflow: hidden; }
-        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
-        
-        /* Warna Harga jadi Hijau */
-        .text-price { color: var(--accent-green) !important; font-weight: 700; }
+    .navbar {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+        padding: 12px 0;
+    }
 
-        /* MODAL CUSTOM */
-        .modal-content { border-radius: 30px; border: none; overflow: hidden; background-color: var(--primary-white); }
-        .modal-header { border-bottom: none; padding: 30px 30px 10px; color: var(--primary-black); }
-        .modal-body { padding: 10px 30px 30px; color: var(--primary-black); }
+    .navbar-brand img {
+        height: 55px;
+    }
 
-        /* GALERI & TESTIMONI */
-        .img-gallery { height: 250px; width: 100%; object-fit: cover; border-radius: 20px; transition: 0.3s; border: 2px solid #eee; }
-        .img-gallery:hover { border-color: var(--accent-green); }
+    .nav-link {
+        font-weight: 700;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: var(--dark) !important;
+        margin: 0 10px;
+    }
+
+    .nav-link:hover {
+        color: var(--gold) !important;
+    }
+
+    #mainSlider .carousel-item img {
+        width: 100%;
+        height: auto;
+        min-height: 300px;
+        object-fit: cover;
+    }
+
+    .trust-bar {
+        background: var(--dark);
+        color: #fff;
+        padding: 40px 0;
+        position: relative;
+        z-index: 10;
+    }
+
+    .trust-item i {
+        font-size: 2rem;
+        color: var(--gold);
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .trust-item h6 {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        font-weight: 800;
+        margin-bottom: 5px;
+    }
+
+    .trust-item p {
+        font-size: 0.75rem;
+        opacity: 0.6;
+        margin-bottom: 0;
+    }
+
+    #about {
+        padding: 80px 0;
+    }
+
+    .about-visual {
+        position: relative;
+    }
+
+    .about-visual img {
+        width: 100%;
+        border-radius: 4px;
+        z-index: 2;
+        position: relative;
+    }
+
+    .about-visual::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px solid var(--gold);
+        top: 20px;
+        left: -20px;
+        z-index: 1;
+        border-radius: 4px;
+    }
+
+    #paket {
+        padding: 80px 0;
+        background: var(--light);
+    }
+
+    .pkg-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        transition: 0.4s;
+        overflow: hidden;
+        border-radius: 4px;
+        height: 100%;
+    }
+
+    .pkg-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--gold);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    }
+
+    .pkg-img-wrapper {
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .pkg-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .pkg-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: var(--gold);
+        color: white;
+        padding: 4px 12px;
+        font-size: 0.7rem;
+        font-weight: 800;
+        border-radius: 2px;
+    }
+
+    .pkg-content {
+        padding: 25px;
+    }
+
+    .price-val {
+        font-size: 1.3rem;
+        color: var(--emerald);
+        font-weight: 800;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .btn-group-cta {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .btn-detail, .btn-booking {
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 12px 5px;
+        border: none;
+        text-align: center;
+    }
+
+    .btn-detail { background: var(--light); color: var(--dark); }
+    .btn-booking { background: var(--dark); color: #fff; }
+
+    #gallery {
+        background: #000;
+        padding: 80px 0;
+        color: #fff;
+    }
+
+    .gal-item {
+        height: 200px;
+        overflow: hidden;
+        padding: 2px;
+    }
+
+    .gal-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.7;
+    }
+
+    #blog {
+        padding: 80px 0;
+    }
+
+    .blog-link {
+        border-bottom: 1px solid #eee;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .contact-box {
+        background: var(--dark);
+        color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        border-right: 8px solid var(--gold);
+    }
+
+    /* Penyesuaian Form agar sejajar */
+    .form-control, .form-select {
+        border-radius: 0;
+        height: 55px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff !important;
+    }
+
+    .form-select {
+        background-color: transparent;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    }
+
+    .form-select option {
+        background-color: var(--dark);
+        color: #fff;
+    }
+
+    /* MEDIA QUERIES UNTUK RESPONSIVE */
+    @media (max-width: 768px) {
+        .display-5 { font-size: 2rem !important; }
+        .contact-box { padding: 30px 20px; border-right: none; border-bottom: 8px solid var(--gold); }
+        .about-visual::before { display: none; }
+        .trust-item h6 { font-size: 0.7rem; }
+        .pkg-img-wrapper { height: 200px; }
         
-        .testi-card { background: var(--primary-white); border-radius: 25px; padding: 40px; border: 1px solid #f1f5f9; position: relative; }
-        .quote-icon { position: absolute; top: 20px; right: 30px; font-size: 3rem; color: var(--accent-green); opacity: 0.1; }
+    }
+    /* Update Bagian Form Select & CTA di Mobile */
+@media (max-width: 768px) {
+    /* 1. Memperbaiki Ikon Dropdown yang muncul banyak */
+    .form-select {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+        background-repeat: no-repeat !important; /* Mencegah ikon muncul berulang */
+        background-position: right 1rem center !important; /* Posisi di pojok kanan */
+        background-size: 16px 12px !important;
+        padding-right: 2.5rem !important;
+        appearance: none;
+        -webkit-appearance: none;
+    }
 
-        /* CONTACT SECTION REVISED */
-        .contact-wrapper { background: var(--primary-white); border-radius: 35px; overflow: hidden; box-shadow: 0 25px 70px rgba(0,0,0,0.08); border: 1px solid #f1f5f9; }
-        /* Sisi Informasi Kontak jadi Hitam */
-        .contact-info-side { background: var(--primary-black); color: var(--primary-white); padding: 60px; }
-        .contact-info-side .text-info { color: var(--accent-green) !important; } /* Ikon jadi Hijau */
-        
-        .contact-form-side { padding: 60px; background-color: var(--primary-white); }
-        .form-control, .form-select { border: 1px solid #e2e8f0; background: var(--soft-gray); padding: 14px 22px; border-radius: 15px; color: var(--primary-black); }
-        .form-control:focus, .form-select:focus { border-color: var(--accent-green); box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25); }
-        
-        /* Tombol Form jadi Hijau */
-        .btn-hijrah-submit { background-color: var(--accent-green); color: var(--primary-white); border: none; }
-        .btn-hijrah-submit:hover { background-color: #146c43; color: var(--primary-white); }
+    /* 2. Memperbaiki Layout CTA (Contact Box) */
+    .contact-box {
+        padding: 30px 20px !important;
+        text-align: center;
+    }
 
-        /* FOOTER */
-        footer { background-color: var(--soft-gray) !important; color: var(--primary-black); }
+    .contact-box h2 {
+        font-size: 1.6rem !important;
+        margin-bottom: 10px;
+    }
 
-        @media (max-width: 991.98px) {
-            .contact-info-side, .contact-form-side { padding: 40px; }
-            .navbar-brand img { height: 50px; }
-        }
+    .contact-box p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+
+    .contact-box h4 {
+        font-size: 1.4rem !important;
+        margin-bottom: 25px;
+    }
+
+    /* Beri jarak antar input agar tidak nempel */
+    .contact-box .row.g-3 > div {
+        margin-bottom: 10px;
+    }
+
+    /* 3. Slider Auto Resize (Persegi Panjang) */
+    #mainSlider .carousel-item img {
+        height: auto !important;
+        min-height: auto !important;
+        object-fit: contain;
+    }
+}
+
+    
     </style>
 </head>
+
 <body>
 
-    <nav class="navbar navbar-expand-lg sticky-top py-1">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="assets/img/logo_hijrah.jpeg" alt="Logo MyHijrah">
+            <a class="navbar-brand" href="/">
+                <img src="assets/img/logo_hijrah.jpeg" alt="MyHijrahWisata Logo">
             </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <i class="fas fa-bars"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link mx-2" href="#">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link mx-2" href="#about">Tentang</a></li>
-                    <li class="nav-item"><a class="nav-link mx-2" href="#paket">Paket</a></li>
-                    <li class="nav-item"><a class="nav-link mx-2" href="#gallery">Galeri</a></li>
-                    <li class="nav-item"><a class="nav-link mx-2" href="#blog">Blog</a></li>
-                    <li class="nav-item ms-lg-3"><a class="btn btn-nav" href="#contact">Hubungi Kami</a></li>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#paket">Paket Umroh</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Dokumentasi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Jurnal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section id="heroSlider" class="carousel slide carousel-fade hero-slider" data-bs-ride="carousel">
-        <div class="carousel-indicators">
+    <div id="mainSlider" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
             <?php foreach($banners as $i => $b): ?>
-                <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="<?= $i ?>" class="<?= $i == 0 ? 'active' : '' ?>"></button>
+            <div class="carousel-item <?= $i == 0 ? 'active' : '' ?>">
+                <img src="assets/img/<?= $b['image'] ?>" alt="Promo Umroh">
+            </div>
             <?php endforeach; ?>
         </div>
-        <div class="carousel-inner">
-            <?php if(count($banners) > 0): ?>
-                <?php foreach($banners as $i => $b): ?>
-                <div class="carousel-item <?= $i == 0 ? 'active' : '' ?>">
-                    <a href="<?= !empty($b['link']) ? $b['link'] : '#contact' ?>">
-                        <img src="assets/img/<?= $b['image'] ?>" alt="Banner <?= $i ?>">
-                    </a>
-                </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <div class="carousel-item active" style="background-color: var(--primary-black); height: 400px;">
-                    <div class="carousel-caption">
-                        <h1 class="fw-bold text-white">Selamat Datang di MyHijrah</h1>
-                    </div>
-                </div>
-            <?php endif; ?>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-    </section>
+    </div>
 
-    <section id="about" class="section-padding">
+    <section class="trust-bar">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="https://images.unsplash.com/photo-1523059623039-a9ed027e7fad?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-5 shadow-lg" alt="About">
+            <div class="row text-center g-3">
+                <div class="col-6 col-md-3 trust-item">
+                    <i class="fas fa-kaaba"></i>
+                    <h6>HOTEL RING 1</h6>
+                    <p>Dekat Masjidil Haram</p>
                 </div>
-                <div class="col-lg-6 ps-lg-5">
-                    <h6 class="text-hijrah fw-bold mb-2">TENTANG KAMI</h6>
-                    <h2 class="display-5 fw-bold mb-4">Partner Perjalanan Ibadah & Wisata Anda</h2>
-                    <p class="text-muted fs-5 mb-4">Kami menghadirkan pengalaman perjalanan religi yang mengutamakan kenyamanan jamaah sesuai syariat.</p>
+                <div class="col-6 col-md-3 trust-item">
+                    <i class="fas fa-award"></i>
+                    <h6>IZIN RESMI</h6>
+                    <p>PPIU Terpercaya</p>
+                </div>
+                <div class="col-6 col-md-3 trust-item">
+                    <i class="fas fa-user-shield"></i>
+                    <h6>PEMBIMBING</h6>
+                    <p>Sesuai Sunnah</p>
+                </div>
+                <div class="col-6 col-md-3 trust-item">
+                    <i class="fas fa-plane-departure"></i>
+                    <h6>DIRECT FLIGHT</h6>
+                    <p>Tanpa Transit</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="paket" class="section-padding bg-light">
-        <div class="container text-center mb-5">
-            <h2 class="display-6 fw-bold">Paket Pilihan Terbaik</h2>
-        </div>
+    <section id="about">
         <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="about-visual">
+                        <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=800" alt="About">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <span class="text-gold fw-bold small">YOUR SPIRITUAL PARTNER</span>
+                    <h1 class="display-5 mb-4">Perjalanan Ibadah yang Bermakna.</h1>
+                    <p class="text-muted">Kami mengkurasi layanan Travel Umroh terbaik dengan maskapai premium dan hotel bintang 5 tepat di depan pelataran masjid.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="paket">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>Paket Eksklusif 2026</h2>
+            </div>
             <div class="row g-4">
                 <?php foreach($packages as $p): ?>
                 <div class="col-md-4">
-                    <div class="card card-custom h-100">
-                        <div class="img-wrapper">
+                    <div class="pkg-card">
+                        <div class="pkg-img-wrapper">
+                            <span class="pkg-badge">VIP</span>
                             <img src="assets/img/<?= $p['image'] ?>" alt="<?= $p['title'] ?>">
                         </div>
-                        <div class="card-body p-4 text-center">
-                            <h5 class="fw-bold mb-2"><?= $p['title'] ?></h5>
-                            <h4 class="text-price mb-3">Rp <?= number_format($p['price'], 0, ',', '.') ?></h4>
-                            
-                            <button class="btn btn-link text-hijrah text-decoration-none fw-bold mb-3 small" data-bs-toggle="modal" data-bs-target="#modalPaket<?= $p['id'] ?>">
-                                Lihat Detail Paket <i class="fas fa-chevron-right ms-1"></i>
-                            </button>
-
-                            <a href="#contact" onclick="setPackage('<?= $p['title'] ?>')" class="btn bg-hijrah text-white w-100 rounded-pill py-2 fw-bold">Tanya Kuota</a>
+                        <div class="pkg-content">
+                            <h3 class="h5 mb-3"><?= $p['title'] ?></h3>
+                            <span class="price-val">IDR <?= number_format($p['price'], 0, ',', '.') ?></span>
+                            <div class="btn-group-cta">
+                                <button class="btn-detail" data-bs-toggle="modal" data-bs-target="#modalPaket<?= $p['id'] ?>">DETAIL</button>
+                                <button onclick="setPackage('<?= $p['title'] ?>')" class="btn-booking">PESAN</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="modal fade" id="modalPaket<?= $p['id'] ?>" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content shadow-lg">
-                            <div class="modal-header">
-                                <h5 class="modal-title fw-bold"><?= $p['title'] ?></h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body text-start">
-                                <div class="mb-3 text-center">
-                                    <img src="assets/img/<?= $p['image'] ?>" class="img-fluid rounded-4 mb-3" style="max-height: 200px; width: 100%; object-fit: cover;">
-                                </div>
-                                <h6 class="fw-bold text-muted small mb-2 uppercase">Deskripsi Paket:</h6>
-                                <div class="text-muted" style="line-height: 1.6;">
-                                    <?= nl2br($p['description']) ?>
-                                </div>
-                                <hr class="my-4 opacity-50">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="small text-muted mb-0">Harga Mulai</p>
-                                        <h5 class="fw-bold text-price mb-0">Rp <?= number_format($p['price'], 0, ',', '.') ?></h5>
+                <div class="modal fade" id="modalPaket<?= $p['id'] ?>" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-body p-4">
+                                <div class="row">
+                                    <div class="col-md-5 mb-3"><img src="assets/img/<?= $p['image'] ?>" class="img-fluid rounded"></div>
+                                    <div class="col-md-7">
+                                        <h4><?= $p['title'] ?></h4>
+                                        <h5 class="text-success">IDR <?= number_format($p['price'], 0, ',', '.') ?></h5>
+                                        <p class="small text-muted"><?= nl2br($p['description']) ?></p>
+                                        <button onclick="setPackage('<?= $p['title'] ?>')" class="btn btn-dark w-100" data-bs-dismiss="modal">KONSULTASI WA</button>
                                     </div>
-                                    <button onclick="setPackage('<?= $p['title'] ?>')" data-bs-dismiss="modal" class="btn bg-hijrah text-white rounded-pill px-4 fw-bold">Pilih Paket</button>
                                 </div>
                             </div>
                         </div>
@@ -234,79 +455,60 @@ try {
         </div>
     </section>
 
-    <section id="gallery" class="section-padding">
-        <div class="container text-center mb-5">
-            <h2 class="display-6 fw-bold">Galeri & Testimoni</h2>
-        </div>
+    <section id="gallery">
         <div class="container text-center">
-            <div class="row g-3 mb-5">
-                <div class="col-md-3 col-6"><img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=500" class="img-gallery shadow-sm"></div>
-                <div class="col-md-3 col-6"><img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=500" class="img-gallery shadow-sm"></div>
-                <div class="col-md-3 col-6"><img src="https://images.unsplash.com/photo-1542466507-d7491d54236e?auto=format&fit=crop&w=500" class="img-gallery shadow-sm"></div>
-                <div class="col-md-3 col-6"><img src="https://images.unsplash.com/photo-1519817650390-64a934479f67?auto=format&fit=crop&w=500" class="img-gallery shadow-sm"></div>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-5 text-center">
-                    <div class="testi-card shadow-sm">
-                        <i class="fas fa-quote-right quote-icon"></i>
-                        <p class="text-muted fs-5">"Pelayanan luar biasa, pembimbingnya sangat sabar dan akomodasi hotel sangat dekat Nabawi."</p>
-                        <h6 class="fw-bold mb-0">Hj. Ratna Sari</h6>
-                    </div>
-                </div>
+            <h2 class="mb-5">Dokumentasi</h2>
+            <div class="row g-1">
+                <div class="col-6 col-md-3 gal-item"><img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=400"></div>
+                <div class="col-6 col-md-3 gal-item"><img src="https://images.unsplash.com/photo-1542466507-d7491d54236e?auto=format&fit=crop&w=400"></div>
+                <div class="col-6 col-md-3 gal-item"><img src="https://images.unsplash.com/photo-1519817650390-64a934479f67?auto=format&fit=crop&w=400"></div>
+                <div class="col-6 col-md-3 gal-item"><img src="https://images.unsplash.com/photo-1523059623039-a9ed027e7fad?auto=format&fit=crop&w=400"></div>
             </div>
         </div>
     </section>
 
-    <section id="blog" class="section-padding bg-light">
-        <div class="container text-center mb-5">
-            <h2 class="display-6 fw-bold">Artikel & Tips</h2>
-        </div>
+    <section id="blog">
         <div class="container">
-            <div class="row g-4">
-                <?php foreach($blogs as $b): ?>
-                <div class="col-md-4">
-                    <div class="card card-custom h-100 border-0 shadow-sm">
-                        <div class="img-wrapper">
-                            <img src="assets/img/<?= $b['image'] ?>" alt="<?= $b['title'] ?>">
-                        </div>
-                        <div class="card-body p-4">
-                            <h5 class="fw-bold mb-3"><?= $b['title'] ?></h5>
-                            <a href="blog_detail.php?slug=<?= $b['slug'] ?>" class="text-hijrah text-decoration-none fw-bold small">Baca Selengkapnya →</a>
-                        </div>
-                    </div>
+            <h2 class="mb-4">Jurnal Islami</h2>
+            <?php foreach($blogs as $b): ?>
+            <a href="blog_detail.php?slug=<?= $b['slug'] ?>" class="blog-link">
+                <div>
+                    <small class="text-gold fw-bold">Update 2026</small>
+                    <h4 class="mb-0 h5"><?= $b['title'] ?></h4>
                 </div>
-                <?php endforeach; ?>
-            </div>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <?php endforeach; ?>
         </div>
     </section>
 
-    <section id="contact" class="section-padding">
+    <section id="contact" class="pb-5">
         <div class="container">
-            <div class="contact-wrapper">
-                <div class="row g-0">
-                    <div class="col-lg-5 contact-info-side">
-                        <h2 class="display-6 fw-bold mb-4">Konsultasikan Perjalanan Anda</h2>
-                        <div class="d-flex align-items-center">
-                            <i class="fab fa-whatsapp fs-3 text-info me-3"></i>
-                            <div><p class="fw-bold mb-0">0812-3456-7890</p></div>
-                        </div>
+            <div class="contact-box">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-5">
+                        <h2 class="h3">Hubungi Kami</h2>
+                        <p class="opacity-75">Konsultasikan rencana ibadah Anda.</p>
+                        <h4 class="text-gold">0812-3456-7890</h4>
                     </div>
-                    <div class="col-lg-7 contact-form-side">
+                    <div class="col-lg-7">
                         <form onsubmit="sendToWhatsapp(); return false;">
-                            <div class="mb-4">
-                                <label class="small fw-bold text-muted mb-2">Nama Lengkap</label>
-                                <input type="text" id="name" class="form-control" required>
-                            </div>
-                            <div class="mb-4">
-                                <label class="small fw-bold text-muted mb-2">Pilih Paket</label>
-                                <select id="packageSelect" class="form-select">
-                                    <option value="Umum">Paket Umum</option>
-                                    <?php foreach($packages as $p): ?>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" id="name" class="form-control" placeholder="Nama Lengkap" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="packageSelect" class="form-select" required>
+                                        <option value="" selected disabled>Pilih Paket</option>
+                                        <?php foreach($packages as $p): ?>
                                         <option value="<?= $p['title'] ?>"><?= $p['title'] ?></option>
-                                    <?php endforeach; ?>
-                                </select>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-light w-100 fw-bold py-3">KIRIM PESAN</button>
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-hijrah-submit w-100 py-3 rounded-pill fw-bold shadow-sm">Chat Admin Sekarang</button>
                         </form>
                     </div>
                 </div>
@@ -314,25 +516,22 @@ try {
         </div>
     </section>
 
-    <footer class="py-5 text-center bg-light border-top">
-        <div class="container">
-            <img src="assets/img/logo_hijrah.jpeg" alt="Logo MyHijrah" height="50" class="mb-3">
-            <p class="small text-muted mb-0">&copy; 2026 MyHijrahWisata Indonesia.</p>
-        </div>
+    <footer class="text-center py-4 border-top">
+        <p class="text-muted small mb-0">&copy; 2026 MyHijrahWisata Indonesia.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        function setPackage(packageName) {
-            document.getElementById('packageSelect').value = packageName;
-            window.location.hash = '#contact';
-        }
-        function sendToWhatsapp() {
-            const name = document.getElementById('name').value;
-            const pckg = document.getElementById('packageSelect').value;
-            const text = `Halo Admin MyHijrah, saya *${name}* ingin tanya paket: *${pckg}*.`;
-            window.open(`https://wa.me/628123456789?text=${encodeURIComponent(text)}`, '_blank');
-        }
+    function setPackage(p) {
+        document.getElementById('packageSelect').value = p;
+        window.location.hash = '#contact';
+    }
+    function sendToWhatsapp() {
+        const n = document.getElementById('name').value;
+        const p = document.getElementById('packageSelect').value;
+        const text = `Halo Admin MyHijrah, saya *${n}* ingin tanya paket: *${p}*.`;
+        window.open(`https://wa.me/628123456789?text=${encodeURIComponent(text)}`, '_blank');
+    }
     </script>
 </body>
-</html> 
+</html>

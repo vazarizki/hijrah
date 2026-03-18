@@ -20,59 +20,101 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyHijrahWisata | Perjalanan Berkah, Hati Bahagia</title>
     
+    <link rel="icon" type="image/jpeg" href="assets/img/logo_hijrah.jpeg">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
         :root {
-            --primary-dark: #2c3e50;
-            --accent-blue: #38bdf8;
-            --soft-gray: #f8fafc;
+            --primary-white: #ffffff;
+            --primary-black: #1a1a1a; /* Hitam yang lebih elegan */
+            --accent-green: #198754; /* Hijau Bootstrap Success, segar dan islami */
+            --soft-gray: #f8f9fa;
         }
 
-        body { font-family: 'Poppins', sans-serif; color: #334155; scroll-behavior: smooth; overflow-x: hidden; }
-        .text-info { color: var(--accent-blue) !important; }
+        body { font-family: 'Poppins', sans-serif; color: var(--primary-black); scroll-behavior: smooth; overflow-x: hidden; background-color: var(--primary-white); }
         
+        /* Utilitas Warna Hijau */
+        .text-hijrah { color: var(--accent-green) !important; }
+        .bg-hijrah { background-color: var(--accent-green) !important; }
+        
+        /* NAVBAR - HANYA LOGO */
         .navbar { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); z-index: 1050; border-bottom: 1px solid #eee; }
-        .btn-nav { background: var(--primary-dark); color: white; border-radius: 50px; padding: 10px 25px; transition: 0.3s; font-weight: 600; }
-        .btn-nav:hover { background: var(--accent-blue); color: white; transform: translateY(-2px); }
+        .navbar-brand img {
+            height: 60px; /* Ukuran logo di navbar disesuaikan */
+            width: auto;
+            object-fit: contain;
+        }
+        .nav-link { color: var(--primary-black) !important; font-weight: 500; }
+        .nav-link:hover { color: var(--accent-green) !important; }
+        
+        /* Tombol Navasi Utama (Hitam) */
+        .btn-nav { background: var(--primary-black); color: var(--primary-white); border-radius: 50px; padding: 10px 25px; transition: 0.3s; font-weight: 600; border: none; }
+        .btn-nav:hover { background: var(--accent-green); color: var(--primary-white); transform: translateY(-2px); }
 
         /* HERO SLIDER */
         .hero-slider .carousel-item img { width: 100%; height: auto; display: block; }
         .carousel-control-prev, .carousel-control-next { filter: invert(1); z-index: 10; }
+        /* Warna indikator slider jadi hijau */
+        .carousel-indicators [data-bs-target] { background-color: var(--accent-green); }
 
         /* SECTIONS & CARDS */
         .section-padding { padding: 80px 0; }
-        .card-custom { border: none; border-radius: 25px; overflow: hidden; transition: 0.4s; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background: white; }
-        .card-custom:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        
+        /* Kartu Paket & Blog */
+        .card-custom { border: none; border-radius: 25px; overflow: hidden; transition: 0.4s; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background: var(--primary-white); border: 1px solid #eee; }
+        .card-custom:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--accent-green); }
+        
         .img-wrapper { height: 230px; overflow: hidden; }
         .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* Warna Harga jadi Hijau */
+        .text-price { color: var(--accent-green) !important; font-weight: 700; }
 
         /* MODAL CUSTOM */
-        .modal-content { border-radius: 30px; border: none; overflow: hidden; }
-        .modal-header { border-bottom: none; padding: 30px 30px 10px; }
-        .modal-body { padding: 10px 30px 30px; }
+        .modal-content { border-radius: 30px; border: none; overflow: hidden; background-color: var(--primary-white); }
+        .modal-header { border-bottom: none; padding: 30px 30px 10px; color: var(--primary-black); }
+        .modal-body { padding: 10px 30px 30px; color: var(--primary-black); }
 
-        .img-gallery { height: 250px; width: 100%; object-fit: cover; border-radius: 20px; transition: 0.3s; }
-        .testi-card { background: white; border-radius: 25px; padding: 40px; border: 1px solid #f1f5f9; }
+        /* GALERI & TESTIMONI */
+        .img-gallery { height: 250px; width: 100%; object-fit: cover; border-radius: 20px; transition: 0.3s; border: 2px solid #eee; }
+        .img-gallery:hover { border-color: var(--accent-green); }
+        
+        .testi-card { background: var(--primary-white); border-radius: 25px; padding: 40px; border: 1px solid #f1f5f9; position: relative; }
+        .quote-icon { position: absolute; top: 20px; right: 30px; font-size: 3rem; color: var(--accent-green); opacity: 0.1; }
 
-        /* CONTACT SECTION */
-        .contact-wrapper { background: #ffffff; border-radius: 35px; overflow: hidden; box-shadow: 0 25px 70px rgba(0,0,0,0.08); border: 1px solid #f1f5f9; }
-        .contact-info-side { background: var(--primary-dark); color: white; padding: 60px; }
-        .contact-form-side { padding: 60px; }
-        .form-control, .form-select { border: 1px solid #e2e8f0; background: #f8fafc; padding: 14px 22px; border-radius: 15px; }
+        /* CONTACT SECTION REVISED */
+        .contact-wrapper { background: var(--primary-white); border-radius: 35px; overflow: hidden; box-shadow: 0 25px 70px rgba(0,0,0,0.08); border: 1px solid #f1f5f9; }
+        /* Sisi Informasi Kontak jadi Hitam */
+        .contact-info-side { background: var(--primary-black); color: var(--primary-white); padding: 60px; }
+        .contact-info-side .text-info { color: var(--accent-green) !important; } /* Ikon jadi Hijau */
+        
+        .contact-form-side { padding: 60px; background-color: var(--primary-white); }
+        .form-control, .form-select { border: 1px solid #e2e8f0; background: var(--soft-gray); padding: 14px 22px; border-radius: 15px; color: var(--primary-black); }
+        .form-control:focus, .form-select:focus { border-color: var(--accent-green); box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25); }
+        
+        /* Tombol Form jadi Hijau */
+        .btn-hijrah-submit { background-color: var(--accent-green); color: var(--primary-white); border: none; }
+        .btn-hijrah-submit:hover { background-color: #146c43; color: var(--primary-white); }
+
+        /* FOOTER */
+        footer { background-color: var(--soft-gray) !important; color: var(--primary-black); }
 
         @media (max-width: 991.98px) {
             .contact-info-side, .contact-form-side { padding: 40px; }
+            .navbar-brand img { height: 50px; }
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg sticky-top py-3">
+    <nav class="navbar navbar-expand-lg sticky-top py-1">
         <div class="container">
-            <a class="navbar-brand fw-bold fs-3 text-dark" href="#">My<span class="text-info">Hijrah</span></a>
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="assets/img/logo_hijrah.jpeg" alt="Logo MyHijrah">
+            </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -105,7 +147,7 @@ try {
                 </div>
                 <?php endforeach; ?>
             <?php else: ?>
-                <div class="carousel-item active" style="background-color: var(--primary-dark); height: 400px;">
+                <div class="carousel-item active" style="background-color: var(--primary-black); height: 400px;">
                     <div class="carousel-caption">
                         <h1 class="fw-bold text-white">Selamat Datang di MyHijrah</h1>
                     </div>
@@ -127,7 +169,7 @@ try {
                     <img src="https://images.unsplash.com/photo-1523059623039-a9ed027e7fad?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-5 shadow-lg" alt="About">
                 </div>
                 <div class="col-lg-6 ps-lg-5">
-                    <h6 class="text-info fw-bold mb-2">TENTANG KAMI</h6>
+                    <h6 class="text-hijrah fw-bold mb-2">TENTANG KAMI</h6>
                     <h2 class="display-5 fw-bold mb-4">Partner Perjalanan Ibadah & Wisata Anda</h2>
                     <p class="text-muted fs-5 mb-4">Kami menghadirkan pengalaman perjalanan religi yang mengutamakan kenyamanan jamaah sesuai syariat.</p>
                 </div>
@@ -149,13 +191,13 @@ try {
                         </div>
                         <div class="card-body p-4 text-center">
                             <h5 class="fw-bold mb-2"><?= $p['title'] ?></h5>
-                            <h4 class="text-primary fw-bold mb-3">Rp <?= number_format($p['price'], 0, ',', '.') ?></h4>
+                            <h4 class="text-price mb-3">Rp <?= number_format($p['price'], 0, ',', '.') ?></h4>
                             
-                            <button class="btn btn-link text-info text-decoration-none fw-bold mb-3 small" data-bs-toggle="modal" data-bs-target="#modalPaket<?= $p['id'] ?>">
+                            <button class="btn btn-link text-hijrah text-decoration-none fw-bold mb-3 small" data-bs-toggle="modal" data-bs-target="#modalPaket<?= $p['id'] ?>">
                                 Lihat Detail Paket <i class="fas fa-chevron-right ms-1"></i>
                             </button>
 
-                            <a href="#contact" onclick="setPackage('<?= $p['title'] ?>')" class="btn btn-primary w-100 rounded-pill py-2 fw-bold">Tanya Kuota</a>
+                            <a href="#contact" onclick="setPackage('<?= $p['title'] ?>')" class="btn bg-hijrah text-white w-100 rounded-pill py-2 fw-bold">Tanya Kuota</a>
                         </div>
                     </div>
                 </div>
@@ -179,9 +221,9 @@ try {
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
                                         <p class="small text-muted mb-0">Harga Mulai</p>
-                                        <h5 class="fw-bold text-primary mb-0">Rp <?= number_format($p['price'], 0, ',', '.') ?></h5>
+                                        <h5 class="fw-bold text-price mb-0">Rp <?= number_format($p['price'], 0, ',', '.') ?></h5>
                                     </div>
-                                    <button onclick="setPackage('<?= $p['title'] ?>')" data-bs-dismiss="modal" class="btn btn-success rounded-pill px-4 fw-bold">Pilih Paket</button>
+                                    <button onclick="setPackage('<?= $p['title'] ?>')" data-bs-dismiss="modal" class="btn bg-hijrah text-white rounded-pill px-4 fw-bold">Pilih Paket</button>
                                 </div>
                             </div>
                         </div>
@@ -206,7 +248,8 @@ try {
             <div class="row g-4 justify-content-center">
                 <div class="col-md-5 text-center">
                     <div class="testi-card shadow-sm">
-                        <p class="text-muted fs-5">"Pelayanan luar biasa, pembimbingnya sangat sabar dan akomodasi hotel sangat dekat."</p>
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p class="text-muted fs-5">"Pelayanan luar biasa, pembimbingnya sangat sabar dan akomodasi hotel sangat dekat Nabawi."</p>
                         <h6 class="fw-bold mb-0">Hj. Ratna Sari</h6>
                     </div>
                 </div>
@@ -228,7 +271,7 @@ try {
                         </div>
                         <div class="card-body p-4">
                             <h5 class="fw-bold mb-3"><?= $b['title'] ?></h5>
-                            <a href="blog_detail.php?slug=<?= $b['slug'] ?>" class="text-info text-decoration-none fw-bold small">Baca Selengkapnya →</a>
+                            <a href="blog_detail.php?slug=<?= $b['slug'] ?>" class="text-hijrah text-decoration-none fw-bold small">Baca Selengkapnya →</a>
                         </div>
                     </div>
                 </div>
@@ -263,7 +306,7 @@ try {
                                     <?php endforeach; ?>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-success w-100 py-3 rounded-pill fw-bold">Chat Admin Sekarang</button>
+                            <button type="submit" class="btn btn-hijrah-submit w-100 py-3 rounded-pill fw-bold shadow-sm">Chat Admin Sekarang</button>
                         </form>
                     </div>
                 </div>
@@ -271,8 +314,9 @@ try {
         </div>
     </section>
 
-    <footer class="py-5 text-center bg-white border-top">
+    <footer class="py-5 text-center bg-light border-top">
         <div class="container">
+            <img src="assets/img/logo_hijrah.jpeg" alt="Logo MyHijrah" height="50" class="mb-3">
             <p class="small text-muted mb-0">&copy; 2026 MyHijrahWisata Indonesia.</p>
         </div>
     </footer>
@@ -291,4 +335,4 @@ try {
         }
     </script>
 </body>
-</html>
+</html> 

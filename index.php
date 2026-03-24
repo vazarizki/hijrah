@@ -324,7 +324,7 @@ try {
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="index">
                 <img src="assets/img/logo_hijrah.jpeg" alt="MyHijrahWisata Logo">
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">

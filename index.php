@@ -14,21 +14,26 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>MyHijrahWisata | Spesialis Umroh VIP & Tour Halal Eksklusif</title>
-    <meta name="description" content="MyHijrahWisata menyediakan layanan Umroh VIP bintang 5 dan paket tour halal terbaik. Pengalaman ibadah nyaman dengan hotel ring 1 dan pembimbing sesuai sunnah.">
-    <meta name="keywords" content="umroh vip, paket umroh bintang 5, tour halal specialist, myhijrahwisata, travel umroh terpercaya">
+    <meta name="description"
+        content="MyHijrahWisata menyediakan layanan Umroh VIP bintang 5 dan paket tour halal terbaik. Pengalaman ibadah nyaman dengan hotel ring 1 dan pembimbing sesuai sunnah.">
+    <meta name="keywords"
+        content="umroh vip, paket umroh bintang 5, tour halal specialist, myhijrahwisata, travel umroh terpercaya">
     <meta name="author" content="MyHijrahWisata Indonesia">
     <meta name="robots" content="index, follow">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://myhijrahwisata.com/">
     <meta property="og:title" content="MyHijrahWisata | Luxury Umroh & Halal Tour Specialist">
-    <meta property="og:description" content="Wujudkan perjalanan ibadah bermakna dengan layanan premium bintang 5 dari MyHijrahWisata.">
+    <meta property="og:description"
+        content="Wujudkan perjalanan ibadah bermakna dengan layanan premium bintang 5 dari MyHijrahWisata.">
     <meta property="og:image" content="assets/img/logo_hijrah.jpeg">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="assets/img/logo_hijrah.jpeg">
     <link rel="apple-touch-icon" href="assets/img/logo_hijrah.jpeg">
@@ -51,7 +56,9 @@ try {
         overflow-x: hidden;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
         font-family: 'Playfair Display', serif;
         font-weight: 800;
     }
@@ -59,12 +66,12 @@ try {
     .navbar {
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
-        border-bottom: 1px solid var(--border);    
+        border-bottom: 1px solid var(--border);
     }
 
     .navbar-brand img {
         height: 100px;
-        margin-bottom:-10px;
+        margin-bottom: -10px;
     }
 
     .nav-link {
@@ -224,7 +231,8 @@ try {
         gap: 10px;
     }
 
-    .btn-detail, .btn-booking {
+    .btn-detail,
+    .btn-booking {
         font-size: 0.7rem;
         font-weight: 700;
         padding: 12px 5px;
@@ -232,8 +240,15 @@ try {
         text-align: center;
     }
 
-    .btn-detail { background: var(--light); color: var(--dark); }
-    .btn-booking { background: var(--dark); color: #fff; }
+    .btn-detail {
+        background: var(--light);
+        color: var(--dark);
+    }
+
+    .btn-booking {
+        background: var(--dark);
+        color: #fff;
+    }
 
     #gallery {
         background: #000;
@@ -276,7 +291,8 @@ try {
         border-right: 8px solid var(--gold);
     }
 
-    .form-control, .form-select {
+    .form-control,
+    .form-select {
         border-radius: 0;
         height: 55px;
         background: rgba(255, 255, 255, 0.05);
@@ -300,31 +316,35 @@ try {
     /* FOOTER STYLES */
     footer {
         background: var(--dark);
-        color: rgba(255,255,255,0.8);
+        color: rgba(255, 255, 255, 0.8);
         padding: 60px 0 30px;
     }
+
     .footer-title {
         color: #fff;
         font-family: 'Playfair Display', serif;
         margin-bottom: 25px;
         font-size: 1.25rem;
     }
+
     .footer-link {
-        color: rgba(255,255,255,0.6);
+        color: rgba(255, 255, 255, 0.6);
         text-decoration: none;
         transition: 0.3s;
         display: block;
         margin-bottom: 10px;
         font-size: 0.9rem;
     }
+
     .footer-link:hover {
         color: var(--gold);
         transform: translateX(5px);
     }
+
     .social-icon {
         width: 40px;
         height: 40px;
-        background: rgba(255,255,255,0.05);
+        background: rgba(255, 255, 255, 0.05);
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -334,27 +354,42 @@ try {
         transition: 0.3s;
         text-decoration: none;
     }
+
     .social-icon:hover {
         background: var(--gold);
         color: var(--dark);
     }
+
     .footer-bottom {
-        border-top: 1px solid rgba(255,255,255,0.1);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
         margin-top: 40px;
         padding-top: 30px;
     }
 
     @media (max-width: 768px) {
-        .trust-bar { display: none !important; }
-        .display-5 { font-size: 2.2rem !important; }
-        .about-visual::before { display: none; }
-        .pkg-img-wrapper { height: 200px; }
-        .contact-box { 
-            padding: 30px 20px !important; 
-            border-right: none; 
+        .trust-bar {
+            display: none !important;
+        }
+
+        .display-5 {
+            font-size: 2.2rem !important;
+        }
+
+        .about-visual::before {
+            display: none;
+        }
+
+        .pkg-img-wrapper {
+            height: 200px;
+        }
+
+        .contact-box {
+            padding: 30px 20px !important;
+            border-right: none;
             border-bottom: 8px solid var(--gold);
             text-align: center;
         }
+
         #mainSlider .carousel-item img {
             height: auto !important;
             min-height: auto !important;
@@ -428,19 +463,22 @@ try {
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
                     <div class="about-visual">
-                        <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=800" alt="About">
+                        <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=800"
+                            alt="About">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <span class="text-gold fw-bold small">YOUR SPIRITUAL PARTNER</span>
                     <h1 class="display-5 mb-4">Perjalanan Ibadah yang Bermakna.</h1>
-                    <p class="text-muted">Kami mengkurasi layanan Travel Umroh terbaik dengan maskapai premium dan hotel bintang 5 tepat di depan pelataran masjid.</p>
-                    
+                    <p class="text-muted">Kami mengkurasi layanan Travel Umroh terbaik dengan maskapai premium dan hotel
+                        bintang 5 tepat di depan pelataran masjid.</p>
+
                     <div class="trust-badge-box">
                         <div class="text-gold"><i class="fas fa-shield-check fa-3x"></i></div>
                         <div>
                             <h5 class="mb-0 fw-bold">100% Trusted Travel</h5>
-                            <p class="small text-muted mb-0">Terdaftar resmi di Kemenag RI dengan ribuan jamaah sukses diberangkatkan.</p>
+                            <p class="small text-muted mb-0">Terdaftar resmi di Kemenag RI dengan ribuan jamaah sukses
+                                diberangkatkan.</p>
                         </div>
                     </div>
                 </div>
@@ -467,8 +505,10 @@ try {
                             <span class="price-label">Mulai Dari</span>
                             <span class="price-val">IDR <?= number_format($p['price'], 0, ',', '.') ?></span>
                             <div class="btn-group-cta">
-                                <button class="btn-detail" data-bs-toggle="modal" data-bs-target="#modalPaket<?= $p['id'] ?>">DETAIL</button>
-                                <button onclick="setPackage('<?= $p['title'] ?>')" class="btn-booking">PESAN SEKARANG</button>
+                                <button class="btn-detail" data-bs-toggle="modal"
+                                    data-bs-target="#modalPaket<?= $p['id'] ?>">DETAIL</button>
+                                <button onclick="setPackage('<?= $p['title'] ?>')" class="btn-booking">PESAN
+                                    SEKARANG</button>
                             </div>
                         </div>
                     </div>
@@ -478,19 +518,24 @@ try {
                     <div class="modal-dialog modal-dialog-centered modal-lg">
                         <div class="modal-content border-0 overflow-hidden">
                             <div class="modal-header border-0 position-absolute top-0 end-0" style="z-index: 99;">
-                                <button type="button" class="btn-close bg-white p-2 rounded-circle" data-bs-dismiss="modal"></button>
+                                <button type="button" class="btn-close bg-white p-2 rounded-circle"
+                                    data-bs-dismiss="modal"></button>
                             </div>
                             <div class="modal-body p-0">
                                 <div class="row g-0">
                                     <div class="col-md-5">
-                                        <img src="assets/img/<?= $p['image'] ?>" class="h-100 w-100 object-fit-cover" style="min-height: 300px;">
+                                        <img src="assets/img/<?= $p['image'] ?>" class="h-100 w-100 object-fit-cover"
+                                            style="min-height: 300px;">
                                     </div>
                                     <div class="col-md-7 p-4 p-lg-5">
                                         <h3 class="mb-1"><?= $p['title'] ?></h3>
                                         <span class="text-gold small d-block mb-3">KEBERANGKATAN 2026</span>
-                                        <h4 class="text-success mb-4">IDR <?= number_format($p['price'], 0, ',', '.') ?></h4>
+                                        <h4 class="text-success mb-4">IDR <?= number_format($p['price'], 0, ',', '.') ?>
+                                        </h4>
                                         <p class="text-muted small mb-4"><?= nl2br($p['description']) ?></p>
-                                        <button onclick="setPackage('<?= $p['title'] ?>')" class="btn btn-dark w-100 py-3 fw-bold" data-bs-dismiss="modal">KONSULTASI VIA WHATSAPP</button>
+                                        <button onclick="setPackage('<?= $p['title'] ?>')"
+                                            class="btn btn-dark w-100 py-3 fw-bold" data-bs-dismiss="modal">KONSULTASI
+                                            VIA WHATSAPP</button>
                                     </div>
                                 </div>
                             </div>
@@ -506,10 +551,18 @@ try {
         <div class="container text-center">
             <h2 class="mb-5 text-white">Dokumentasi Jamaah</h2>
             <div class="row g-1">
-                <div class="col-6 col-md-3 gal-item"><img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=400"></div>
-                <div class="col-6 col-md-3 gal-item"><img src="https://images.unsplash.com/photo-1542466507-d7491d54236e?auto=format&fit=crop&w=400"></div>
-                <div class="col-6 col-md-3 gal-item"><img src="https://images.unsplash.com/photo-1519817650390-64a934479f67?auto=format&fit=crop&w=400"></div>
-                <div class="col-6 col-md-3 gal-item"><img src="https://images.unsplash.com/photo-1523059623039-a9ed027e7fad?auto=format&fit=crop&w=400"></div>
+                <div class="col-6 col-md-3 gal-item"><img
+                        src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=400">
+                </div>
+                <div class="col-6 col-md-3 gal-item"><img
+                        src="https://images.unsplash.com/photo-1542466507-d7491d54236e?auto=format&fit=crop&w=400">
+                </div>
+                <div class="col-6 col-md-3 gal-item"><img
+                        src="https://images.unsplash.com/photo-1519817650390-64a934479f67?auto=format&fit=crop&w=400">
+                </div>
+                <div class="col-6 col-md-3 gal-item"><img
+                        src="https://images.unsplash.com/photo-1523059623039-a9ed027e7fad?auto=format&fit=crop&w=400">
+                </div>
             </div>
         </div>
     </section>
@@ -542,7 +595,8 @@ try {
                         <form onsubmit="sendToWhatsapp(); return false;">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <input type="text" id="name" class="form-control" placeholder="Nama Lengkap" required>
+                                    <input type="text" id="name" class="form-control" placeholder="Nama Lengkap"
+                                        required>
                                 </div>
                                 <div class="col-md-6">
                                     <select id="packageSelect" class="form-select" required>
@@ -553,7 +607,8 @@ try {
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit"  class="btn btn-light w-100 fw-bold py-3">KIRIM PESAN SEKARANG</button>
+                                    <button type="submit" class="btn btn-light w-100 fw-bold py-3">KIRIM PESAN
+                                        SEKARANG</button>
                                 </div>
                             </div>
                         </form>
@@ -567,11 +622,14 @@ try {
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <img src="assets/img/logo_hijrah.jpeg" alt="Logo" class="mb-4" style="height: 100px; filter: brightness(1) invert(1);">
-                    <p class="small mb-4">MyHijrahWisata adalah mitra perjalanan ibadah Anda yang mengedepankan kenyamanan dan kesesuaian sunnah. Layanan premium untuk pengalaman spiritual tak terlupakan.</p>
+                    <img src="assets/img/logo_hijrah.jpeg" alt="Logo" class="mb-4"
+                        style="height: 100px; filter: brightness(1) invert(1);">
+                    <p class="small mb-4">MyHijrahWisata adalah mitra perjalanan ibadah Anda yang mengedepankan
+                        kenyamanan dan kesesuaian sunnah. Layanan premium untuk pengalaman spiritual tak terlupakan.</p>
                     <div class="small">
-                        <p class="mb-2"><i class="fas fa-map-marker-alt text-gold me-2"></i> Lobby Djajakarta House Jl. Jombang Raya no.28 Pdk Aren Tangsel</p>
-                        <p class="mb-2"><i class="fas fa-phone text-gold me-2"></i>  0815-998-0084</p>
+                        <p class="mb-2"><i class="fas fa-map-marker-alt text-gold me-2"></i> Lobby Djajakarta House Jl.
+                            Jombang Raya no.28 Pdk Aren Tangsel</p>
+                        <p class="mb-2"><i class="fas fa-phone text-gold me-2"></i> 0815-998-0084</p>
                         <p class="mb-0"><i class="fas fa-envelope text-gold me-2"></i> info@myhijrahwisata.com</p>
                     </div>
                 </div>
@@ -587,7 +645,7 @@ try {
                 <div class="col-6 col-lg-2">
                     <h5 class="footer-title">Paket Utama</h5>
                     <?php foreach(array_slice($packages, 0, 4) as $p): ?>
-                        <a href="#paket" class="footer-link text-truncate"><?= $p['title'] ?></a>
+                    <a href="#paket" class="footer-link text-truncate"><?= $p['title'] ?></a>
                     <?php endforeach; ?>
                 </div>
 
@@ -616,6 +674,7 @@ try {
         document.getElementById('packageSelect').value = p;
         window.location.hash = '#contact';
     }
+
     function sendToWhatsapp() {
         const n = document.getElementById('name').value;
         const p = document.getElementById('packageSelect').value;
@@ -624,4 +683,5 @@ try {
     }
     </script>
 </body>
+
 </html>

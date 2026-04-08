@@ -3,7 +3,8 @@ require 'config.php';
 try {
     $banners = $pdo->query("SELECT * FROM banners ORDER BY id DESC")->fetchAll();
     $packages = $pdo->query("SELECT * FROM packages ORDER BY id DESC")->fetchAll();
-    $blogs = $pdo->query("SELECT * FROM blogs ORDER BY id DESC LIMIT 3")->fetchAll();
+    // Bagian ini diubah dari LIMIT 3 menjadi LIMIT 5
+    $blogs = $pdo->query("SELECT * FROM blogs ORDER BY id DESC LIMIT 5")->fetchAll();
 } catch (PDOException $e) { die("Error: " . $e->getMessage()); }
 ?>
 
@@ -535,7 +536,7 @@ try {
                     <div class="col-lg-5">
                         <h2 class="h3">Hubungi Kami</h2>
                         <p class="opacity-75">Bicarakan rencana ibadah Anda secara personal.</p>
-                        <h4 class="text-gold">0812-3456-7890</h4>
+                        <h4 class="text-gold">0815-998-0084</h4>
                     </div>
                     <div class="col-lg-7">
                         <form onsubmit="sendToWhatsapp(); return false;">

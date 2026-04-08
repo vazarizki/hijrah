@@ -566,7 +566,7 @@ try {
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <img src="assets/img/logo_hijrah.jpeg" alt="Logo" class="mb-4" style="height: 60px; filter: brightness(0) invert(1);">
+                    <img src="assets/img/logo_hijrah.jpeg" alt="Logo" class="mb-4" style="height: 100px; filter: brightness(1) invert(1);">
                     <p class="small mb-4">MyHijrahWisata adalah mitra perjalanan ibadah Anda yang mengedepankan kenyamanan dan kesesuaian sunnah. Layanan premium untuk pengalaman spiritual tak terlupakan.</p>
                     <div class="small">
                         <p class="mb-2"><i class="fas fa-map-marker-alt text-gold me-2"></i> Jl. Raya Utama No. 123, Jakarta Selatan</p>
@@ -618,7 +618,7 @@ try {
     function sendToWhatsapp() {
         const n = document.getElementById('name').value;
         const p = document.getElementById('packageSelect').value;
-        const text = `Halo Admin MyHijrah, saya *${n}* ingin tanya paket: *${p}*.`;
+        const text = `Assalamualaikum Admin MyHijrah, saya *${n}* ingin tanya paket: *${p}*.`;
         window.open(`https://wa.me/628159980084?text=${encodeURIComponent(text)}`, '_blank');
     }
     </script>

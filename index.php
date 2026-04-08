@@ -58,12 +58,12 @@ try {
     .navbar {
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
-        border-bottom: 1px solid var(--border);
-        padding: 12px 0;
+        border-bottom: 1px solid var(--border);    
     }
 
     .navbar-brand img {
-        height: 55px;
+        height: 100px;
+        margin-bottom:-10px;
     }
 
     .nav-link {
@@ -324,7 +324,7 @@ try {
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index">
+            <a class="navbar-brand" href="/">
                 <img src="assets/img/logo_hijrah.jpeg" alt="MyHijrahWisata Logo">
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">

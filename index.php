@@ -553,7 +553,7 @@ try {
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-light w-100 fw-bold py-3">KIRIM PESAN SEKARANG</button>
+                                    <button type="submit"  class="btn btn-light w-100 fw-bold py-3">KIRIM PESAN SEKARANG</button>
                                 </div>
                             </div>
                         </form>
@@ -570,7 +570,7 @@ try {
                     <img src="assets/img/logo_hijrah.jpeg" alt="Logo" class="mb-4" style="height: 100px; filter: brightness(1) invert(1);">
                     <p class="small mb-4">MyHijrahWisata adalah mitra perjalanan ibadah Anda yang mengedepankan kenyamanan dan kesesuaian sunnah. Layanan premium untuk pengalaman spiritual tak terlupakan.</p>
                     <div class="small">
-                        <p class="mb-2"><i class="fas fa-map-marker-alt text-gold me-2"></i> Jl. Raya Utama No. 123, Jakarta Selatan</p>
+                        <p class="mb-2"><i class="fas fa-map-marker-alt text-gold me-2"></i> Lobby Djajakarta House Jl. Jombang Raya no.28 Pdk Aren Tangsel</p>
                         <p class="mb-2"><i class="fas fa-phone text-gold me-2"></i>  0815-998-0084</p>
                         <p class="mb-0"><i class="fas fa-envelope text-gold me-2"></i> info@myhijrahwisata.com</p>
                     </div>

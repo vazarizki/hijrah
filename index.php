@@ -141,7 +141,6 @@ try {
         border-radius: 4px;
     }
 
-    /* Trust Badge Under About */
     .trust-badge-box {
         background: #fff;
         border: 1px dashed var(--gold);
@@ -297,20 +296,64 @@ try {
         color: #fff;
     }
 
-    /* MEDIA QUERIES RESPONSIVE */
+    /* FOOTER STYLES */
+    footer {
+        background: var(--dark);
+        color: rgba(255,255,255,0.8);
+        padding: 60px 0 30px;
+    }
+    .footer-title {
+        color: #fff;
+        font-family: 'Playfair Display', serif;
+        margin-bottom: 25px;
+        font-size: 1.25rem;
+    }
+    .footer-link {
+        color: rgba(255,255,255,0.6);
+        text-decoration: none;
+        transition: 0.3s;
+        display: block;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+    }
+    .footer-link:hover {
+        color: var(--gold);
+        transform: translateX(5px);
+    }
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.05);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: #fff;
+        margin-right: 10px;
+        transition: 0.3s;
+        text-decoration: none;
+    }
+    .social-icon:hover {
+        background: var(--gold);
+        color: var(--dark);
+    }
+    .footer-bottom {
+        border-top: 1px solid rgba(255,255,255,0.1);
+        margin-top: 40px;
+        padding-top: 30px;
+    }
+
     @media (max-width: 768px) {
         .trust-bar { display: none !important; }
         .display-5 { font-size: 2.2rem !important; }
         .about-visual::before { display: none; }
         .pkg-img-wrapper { height: 200px; }
-
         .contact-box { 
             padding: 30px 20px !important; 
             border-right: none; 
             border-bottom: 8px solid var(--gold);
             text-align: center;
         }
-
         #mainSlider .carousel-item img {
             height: auto !important;
             min-height: auto !important;
@@ -519,8 +562,51 @@ try {
         </div>
     </section>
 
-    <footer class="text-center py-4 border-top">
-        <p class="text-muted small mb-0">&copy; 2026 MyHijrahWisata Indonesia. All Rights Reserved.</p>
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="assets/img/logo_hijrah.jpeg" alt="Logo" class="mb-4" style="height: 60px; filter: brightness(0) invert(1);">
+                    <p class="small mb-4">MyHijrahWisata adalah mitra perjalanan ibadah Anda yang mengedepankan kenyamanan dan kesesuaian sunnah. Layanan premium untuk pengalaman spiritual tak terlupakan.</p>
+                    <div class="small">
+                        <p class="mb-2"><i class="fas fa-map-marker-alt text-gold me-2"></i> Jl. Raya Utama No. 123, Jakarta Selatan</p>
+                        <p class="mb-2"><i class="fas fa-phone text-gold me-2"></i>  0815-998-0084</p>
+                        <p class="mb-0"><i class="fas fa-envelope text-gold me-2"></i> info@myhijrahwisata.com</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-2 offset-lg-1">
+                    <h5 class="footer-title">Navigasi</h5>
+                    <a href="#about" class="footer-link">Tentang Kami</a>
+                    <a href="#paket" class="footer-link">Paket Umroh</a>
+                    <a href="#gallery" class="footer-link">Dokumentasi</a>
+                    <a href="#blog" class="footer-link">Jurnal Islami</a>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h5 class="footer-title">Paket Utama</h5>
+                    <?php foreach(array_slice($packages, 0, 4) as $p): ?>
+                        <a href="#paket" class="footer-link text-truncate"><?= $p['title'] ?></a>
+                    <?php endforeach; ?>
+                </div>
+
+                <div class="col-lg-3 text-lg-end">
+                    <h5 class="footer-title">Ikuti Kami</h5>
+                    <div class="mb-4">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <p class="small text-gold fw-bold mb-0">Izin PPIU Terdaftar Resmi</p>
+                    <p class="small opacity-50">Kemenag RI No. 123 Tahun 2026</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom text-center">
+                <p class="small mb-0">&copy; 2026 MyHijrahWisata Indonesia. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -533,7 +619,7 @@ try {
         const n = document.getElementById('name').value;
         const p = document.getElementById('packageSelect').value;
         const text = `Halo Admin MyHijrah, saya *${n}* ingin tanya paket: *${p}*.`;
-        window.open(`https://wa.me/628123456789?text=${encodeURIComponent(text)}`, '_blank');
+        window.open(`https://wa.me/628159980084?text=${encodeURIComponent(text)}`, '_blank');
     }
     </script>
 </body>

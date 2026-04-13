@@ -95,7 +95,7 @@ try {
     }
 
     .trust-bar {
-        background: var(--dark);
+        background: black;
         color: #fff;
         padding: 40px 0;
         position: relative;
@@ -104,7 +104,7 @@ try {
 
     .trust-item i {
         font-size: 2rem;
-        color: var(--gold);
+        color: #458f3c;
         margin-bottom: 15px;
         display: block;
     }

@@ -70,7 +70,7 @@ try {
     }
 
     .navbar-brand img {
-        height: 100px;
+        height: 120px;
         margin-bottom: -10px;
     }
 

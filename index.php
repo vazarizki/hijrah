@@ -29,6 +29,8 @@ try {
     <meta property="og:description"
         content="Wujudkan perjalanan ibadah bermakna dengan layanan premium bintang 5 dari MyHijrahWisata.">
     <meta property="og:image" content="assets/img/logo_hijrah.jpeg">
+    
+    <link rel="canonical" href="https://myhijrahwisata.com/">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link
@@ -552,16 +554,16 @@ try {
             <h2 class="mb-5 text-white">Dokumentasi Jamaah</h2>
             <div class="row g-1">
                 <div class="col-6 col-md-3 gal-item"><img
-                        src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=400">
+                        src="assets/img/testimoni.jpeg" alt="Dokumentasi jamaah">
                 </div>
                 <div class="col-6 col-md-3 gal-item"><img
-                        src="https://images.unsplash.com/photo-1542466507-d7491d54236e?auto=format&fit=crop&w=400">
+                        src="assets/img/testimoni_2.jpeg" alt="Dokumentasi Umroh">
                 </div>
                 <div class="col-6 col-md-3 gal-item"><img
-                        src="https://images.unsplash.com/photo-1519817650390-64a934479f67?auto=format&fit=crop&w=400">
+                        src="assets/img/testimoni_3.jpeg" alt="Dokumentasi Umroh dan Haji">
                 </div>
                 <div class="col-6 col-md-3 gal-item"><img
-                        src="https://images.unsplash.com/photo-1523059623039-a9ed027e7fad?auto=format&fit=crop&w=400">
+                        src="assets/img/testimoni_4.jpeg" alt="Dokumentasi Jamaah">
                 </div>
             </div>
         </div>
@@ -623,7 +625,7 @@ try {
             <div class="row g-4">
                 <div class="col-lg-4">
                     <img src="assets/img/logo_hijrah.jpeg" alt="Logo" class="mb-4"
-                        style="height: 100px; filter: brightness(1) invert(1);">
+                        style="height: 100px;">
                     <p class="small mb-4">MyHijrahWisata adalah mitra perjalanan ibadah Anda yang mengedepankan
                         kenyamanan dan kesesuaian sunnah. Layanan premium untuk pengalaman spiritual tak terlupakan.</p>
                     <div class="small">

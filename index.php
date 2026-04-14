@@ -139,18 +139,6 @@ try {
         position: relative;
     }
 
-    .about-visual::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border: 2px solid var(--gold);
-        top: 20px;
-        left: -20px;
-        z-index: 1;
-        border-radius: 4px;
-    }
-
     .trust-badge-box {
         background: #fff;
         border: 1px dashed var(--gold);

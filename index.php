@@ -89,6 +89,42 @@ try {
         color: var(--gold) !important;
     }
 
+    .nav-cta-wa {
+        background: #25d366;
+        color: #fff !important;
+        padding: 6px 15px !important;
+        border-radius: 50px;
+        font-size: 0.7rem !important; /* Ukuran teks lebih kecil agar pas di mobile */
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        text-decoration: none;
+    }
+
+    .nav-cta-wa:hover {
+        background: #128c7e;
+    }
+
+    /* Pengaturan jarak di Desktop */
+    @media (min-width: 992px) {
+        .nav-cta-wa {
+            margin-left: 15px;
+            padding: 8px 20px !important;
+            font-size: 0.75rem !important;
+        }
+    }
+
+    /* Pengaturan jarak di Mobile agar tidak menempel dengan hamburger */
+    @media (max-width: 991px) {
+        .nav-cta-wa {
+            margin-right: 10px;
+            order: 0; /* Memastikan tombol di kiri hamburger */
+        }
+        .navbar-toggler {
+            order: 1;
+        }
+    }
     #mainSlider .carousel-item img {
         width: 100%;
         height: auto;
@@ -138,6 +174,8 @@ try {
         z-index: 2;
         position: relative;
     }
+
+   
 
     .trust-badge-box {
         background: #fff;
@@ -396,9 +434,17 @@ try {
             <a class="navbar-brand" href="/">
                 <img src="assets/img/logo_hijrah.jpeg" alt="MyHijrahWisata Logo">
             </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-                <i class="fas fa-bars"></i>
-            </button>
+
+            <div class="d-flex align-items-center ms-auto">
+                <a class="nav-link nav-cta-wa" href="https://wa.me/628159980084?text=Assalamualaikum%20Admin%20MyHijrah%2C%20saya%20butuh%20bantuan%20informasi." target="_blank">
+                    <i class="fab fa-whatsapp"></i> <span class="d-none d-sm-inline">Need Assistance</span><span class="d-inline d-sm-none">Need Assistance</span>
+                </a>
+
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">Tentang Kami</a></li>
@@ -458,17 +504,15 @@ try {
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <span class="text-gold fw-bold small">YOUR SPIRITUAL PARTNER</span>
-                    <h1 class="display-5 mb-4">Perjalanan Ibadah yang Bermakna.</h1>
-                    <p class="text-muted">Kami mengkurasi layanan Travel Umroh terbaik dengan maskapai premium dan hotel
-                        bintang 5 tepat di depan pelataran masjid.</p>
+                    <span class="text-gold fw-bold small">Sahabat Menuju Baitullah</span>
+                    <h1 class="display-5 mb-4">Perjalanan Ibadah Yang Berkesan</h1>
+                    <p class="text-muted">Dengan layanan optimal serta didukung staf profesional kami hadir untuk memberikan sesuatu yang berkesan disetiap perjalanan anda.</p>
 
                     <div class="trust-badge-box">
                         <div class="text-gold"><i class="fas fa-shield-check fa-3x"></i></div>
                         <div>
                             <h5 class="mb-0 fw-bold">100% Trusted Travel</h5>
-                            <p class="small text-muted mb-0">Terdaftar resmi di Kemenag RI dengan ribuan jamaah sukses
-                                diberangkatkan.</p>
+                            <p class="small text-muted mb-0">Berlisensi resmi Biro Perjalanan Wisata yang hadir menjadi Sahabat Menuju Baitullah</p>
                         </div>
                     </div>
                 </div>
@@ -612,7 +656,7 @@ try {
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <img src="assets/img/logo_hijrah.jpeg" alt="Logo" class="mb-4"
+                    <img src="assets/img/logo_footer.jpeg" alt="Logo" class="mb-4"
                         style="height: 100px;">
                     <p class="small mb-4">MyHijrahWisata adalah mitra perjalanan ibadah Anda yang mengedepankan
                         kenyamanan dan kesesuaian sunnah. Layanan premium untuk pengalaman spiritual tak terlupakan.</p>
@@ -642,13 +686,14 @@ try {
                 <div class="col-lg-3 text-lg-end">
                     <h5 class="footer-title">Ikuti Kami</h5>
                     <div class="mb-4">
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/p/DXDTTthE5hD/?igsh=MXU1d25pN2g0YzR0Yw==" class="social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://youtube.com/@myhijrahwisata?si=NzF6WJN8lXKnLbIq" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@myhijrahwisata007?_r=1&_t=ZS-95Y8HEwo5gu" class="social-icon"><i class="fab fa-tiktok"></i></a>
                     </div>
-                    <p class="small text-gold fw-bold mb-0">Izin PPIU Terdaftar Resmi</p>
-                    <p class="small opacity-50">Kemenag RI No. 123 Tahun 2026</p>
+                    <p class="small text-gold fw-bold mb-0">No. Rekening</p>
+                    <p class="small opacity-50">PT. Hijrah Wisata Indonesia 
+                   <br> BRI 0393 01 777999 563</p>
                 </div>
             </div>
 

@@ -28,7 +28,7 @@ try {
     <meta property="og:title" content="MyHijrahWisata | Luxury Umroh & Halal Tour Specialist">
     <meta property="og:description"
         content="Wujudkan perjalanan ibadah bermakna dengan layanan premium bintang 5 dari MyHijrahWisata.">
-    <meta property="og:image" content="assets/img/logo_hijrah.jpeg">
+    <meta property="og:image" content="assets/img/logo_hijrah.png">
     
     <link rel="canonical" href="https://myhijrahwisata.com/">
 
@@ -38,7 +38,7 @@ try {
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="assets/img/logo_hijrah.jpeg">
-    <link rel="apple-touch-icon" href="assets/img/logo_hijrah.jpeg">
+    <link rel="apple-touch-icon" href="assets/img/logo_hijrah.png">
 
     <style>
     :root {
@@ -224,7 +224,7 @@ try {
         position: absolute;
         top: 15px;
         left: 15px;
-        background: var(--gold);
+        background: #ff0000;
         color: white;
         padding: 4px 12px;
         font-size: 0.7rem;
@@ -343,7 +343,7 @@ try {
 
     /* FOOTER STYLES */
     footer {
-        background: var(--dark);
+        background: black;
         color: rgba(255, 255, 255, 0.8);
         padding: 60px 0 30px;
     }
@@ -372,7 +372,7 @@ try {
     .social-icon {
         width: 40px;
         height: 40px;
-        background: rgba(255, 255, 255, 0.05);
+        background: rgb(37 205 112 / 75%);
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -432,11 +432,11 @@ try {
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="assets/img/logo_hijrah.jpeg" alt="MyHijrahWisata Logo">
+                <img src="assets/img/logo_hijrah.png" alt="MyHijrahWisata Logo">
             </a>
 
             <div class="d-flex align-items-center ms-auto">
-                <a class="nav-link nav-cta-wa" href="https://wa.me/628159980084?text=Assalamualaikum%20Admin%20MyHijrah%2C%20saya%20butuh%20bantuan%20informasi." target="_blank">
+                <a class="nav-link nav-cta-wa" href="https://wa.me/628159880084?text=Assalamualaikum%20Admin%20MyHijrah%2C%20saya%20butuh%20bantuan%20informasi." target="_blank">
                     <i class="fab fa-whatsapp"></i> <span class="d-none d-sm-inline">Need Assistance</span><span class="d-inline d-sm-none">Need Assistance</span>
                 </a>
 
@@ -471,14 +471,14 @@ try {
         <div class="container">
             <div class="row text-center g-3">
                 <div class="col-6 col-md-3 trust-item">
-                    <i class="fas fa-kaaba"></i>
-                    <h6>HOTEL RING 1</h6>
-                    <p>Dekat Masjidil Haram</p>
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <h6>Harga</h6>
+                    <p>Harga Bersahabat </p>
                 </div>
                 <div class="col-6 col-md-3 trust-item">
                     <i class="fas fa-award"></i>
-                    <h6>IZIN RESMI</h6>
-                    <p>PPIU Terpercaya</p>
+                    <h6>IZIN</h6>
+                    <p>Resmi Terdaftar</p>
                 </div>
                 <div class="col-6 col-md-3 trust-item">
                     <i class="fas fa-user-shield"></i>
@@ -486,9 +486,9 @@ try {
                     <p>Sesuai Sunnah</p>
                 </div>
                 <div class="col-6 col-md-3 trust-item">
-                    <i class="fas fa-plane-departure"></i>
-                    <h6>DIRECT FLIGHT</h6>
-                    <p>Tanpa Transit</p>
+                    <i class="fa-solid fa-headset"></i>
+                    <h6>Pelayanan</h6>
+                    <p>Cepat dan Amanah</p>
                 </div>
             </div>
         </div>
@@ -568,8 +568,9 @@ try {
                                         </h4>
                                         <p class="text-muted small mb-4"><?= nl2br($p['description']) ?></p>
                                         <button onclick="setPackage('<?= $p['title'] ?>')"
-                                            class="btn btn-dark w-100 py-3 fw-bold" data-bs-dismiss="modal">KONSULTASI
-                                            VIA WHATSAPP</button>
+                                            class="btn btn-dark w-100 py-3 fw-bold" data-bs-dismiss="modal"><a href="https://wa.me/628159880084?text=Assalamualaikum%20Admin%20MyHijrah%2C%20saya%20butuh%20bantuan%20informasi.">KONSULTASI
+                                            VIA WHATSAPP</a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -623,7 +624,7 @@ try {
                     <div class="col-lg-5">
                         <h2 class="h3">Hubungi Kami</h2>
                         <p class="opacity-75">Bicarakan rencana ibadah Anda secara personal.</p>
-                        <h4 class="text-gold">0815-998-0084</h4>
+                        <h4 class="text-gold">0815-9880-084</h4>
                     </div>
                     <div class="col-lg-7">
                         <form onsubmit="sendToWhatsapp(); return false;">
@@ -656,14 +657,14 @@ try {
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <img src="assets/img/logo_footer.jpeg" alt="Logo" class="mb-4"
+                    <img src="assets/img/logo_footer.png" alt="Logo" class="mb-4"
                         style="height: 100px;">
                     <p class="small mb-4">MyHijrahWisata adalah mitra perjalanan ibadah Anda yang mengedepankan
                         kenyamanan dan kesesuaian sunnah. Layanan premium untuk pengalaman spiritual tak terlupakan.</p>
                     <div class="small">
                         <p class="mb-2"><i class="fas fa-map-marker-alt text-gold me-2"></i> Lobby Djajakarta House Jl.
                             Jombang Raya no.28 Pdk Aren Tangsel</p>
-                        <p class="mb-2"><i class="fas fa-phone text-gold me-2"></i> 0815-998-0084</p>
+                        <p class="mb-2"><i class="fas fa-phone text-gold me-2"></i> 08159-880-084</p>
                         <p class="mb-0"><i class="fas fa-envelope text-gold me-2"></i> info@myhijrahwisata.com</p>
                     </div>
                 </div>
@@ -686,7 +687,7 @@ try {
                 <div class="col-lg-3 text-lg-end">
                     <h5 class="footer-title">Ikuti Kami</h5>
                     <div class="mb-4">
-                        <a href="https://www.instagram.com/p/DXDTTthE5hD/?igsh=MXU1d25pN2g0YzR0Yw==" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/myhijrahwisata?igsh=MXJ2M3l5ajdyOHM3eA==" class="social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://youtube.com/@myhijrahwisata?si=NzF6WJN8lXKnLbIq" class="social-icon"><i class="fab fa-youtube"></i></a>
                         <a href="https://www.tiktok.com/@myhijrahwisata007?_r=1&_t=ZS-95Y8HEwo5gu" class="social-icon"><i class="fab fa-tiktok"></i></a>
@@ -714,7 +715,7 @@ try {
         const n = document.getElementById('name').value;
         const p = document.getElementById('packageSelect').value;
         const text = `Assalamualaikum Admin MyHijrah, saya *${n}* ingin tanya paket: *${p}*.`;
-        window.open(`https://wa.me/628159980084?text=${encodeURIComponent(text)}`, '_blank');
+        window.open(`https://wa.me/628159880084?text=${encodeURIComponent(text)}`, '_blank');
     }
     </script>
 </body>

@@ -277,6 +277,10 @@ try {
         background: var(--dark);
         color: #fff;
     }
+   .button-konsultasi{
+        color:white;
+        text-decoration:none;
+    }
 
     #gallery {
         background: #000;
@@ -325,7 +329,7 @@ try {
         height: 55px;
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.2);
-        color: #fff !important;
+       
     }
 
     .form-select {
@@ -334,6 +338,7 @@ try {
         background-repeat: no-repeat;
         background-position: right 1rem center;
         background-size: 16px 12px;
+        color:white;
     }
 
     .form-select option {
@@ -568,7 +573,7 @@ try {
                                         </h4>
                                         <p class="text-muted small mb-4"><?= nl2br($p['description']) ?></p>
                                         <button onclick="setPackage('<?= $p['title'] ?>')"
-                                            class="btn btn-dark w-100 py-3 fw-bold" data-bs-dismiss="modal"><a href="https://wa.me/628159880084?text=Assalamualaikum%20Admin%20MyHijrah%2C%20saya%20butuh%20bantuan%20informasi.">KONSULTASI
+                                            class="btn btn-dark w-100 py-3 fw-bold" data-bs-dismiss="modal"><a class="button-konsultasi" href="https://wa.me/628159880084?text=Assalamualaikum%20Admin%20MyHijrah%2C%20saya%20butuh%20bantuan%20informasi.">KONSULTASI
                                             VIA WHATSAPP</a>
                                         </button>
                                     </div>
